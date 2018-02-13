@@ -10,22 +10,18 @@
             </div>
             <div style="width:650px;">
                 <div>
-                    <input id="answer" class="form-control" type="text" />
-                    <button class="btn btn-lg btn-primary btn-block" id="btn">&lt;</button>
+                    <input id="answer" class="form-control" type="text" placeholder="what?" />
+                    <button class="btn btn-lg btn-primary btn-block" id="btn">&rt;</button>
                 </div>
             </div>
         </div>
         <script>
             var btn = document.getElementById('btn');
             btn.onclick = function() {
-                var answer = docuemtn.getElementById('answer');
-                if (answer.value.toLowerCase().contains('loaded') && answer.toLowerCase().contains('gun')) {
-                    document.body.innerHTML = ""
-                }
+                var answer = document.getElementById('answer');
+                if (answer.value.toLowerCase().includes('loaded') && answer.value.toLowerCase().toLowerCase().includes('gun'))
+                    document.body.innerHTML = '49.989639, 36.248715'
             };
         </script>
-        <div>
-            В этой страниц
-        </div>
     </body>
 </html>
