@@ -14,7 +14,7 @@ function finishCategory() {
     var currentTopicBtn = $('#' + currentTopic + '-btn');
     setButtonState(currentTopicBtn, correctCount);
     if (correctCount >= 10)
-        document.location.href = "https://tinyurl.com/y9rprqyg";
+        document.location.href = "completed.html";
 }
 
 function setButtonState(currentTopicBtn, count) {
