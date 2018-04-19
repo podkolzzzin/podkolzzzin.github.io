@@ -1,0 +1,23 @@
+.question-body {
+    margin: 0 auto;
+}
+
+.incorrect {
+    background: rgba(255,0,0,0.7);
+}
+
+.correct {
+    background: rgba(0, 255, 0, 0.7);
+}
+
+.answer {
+    display: none;
+}
+
+.answer-pattern {
+    display: none;
+}
+
+img {
+    width: 320px;
+}

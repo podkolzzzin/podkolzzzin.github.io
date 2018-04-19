@@ -1,27 +1,435 @@
 <html>
     <head>
-        <title></title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+        <link rel="stylesheet" href="index.css" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+        <title>Birthday madness</title>
     </head>
     <body>
-        <div style="margin: 0 auto; width:650px;">
-            <div style="width:650px;">
-                <img src="img.jpg" />
-            </div>
-            <div style="width:650px;">
-                <div>
-                    <input id="answer" class="form-control" type="text" placeholder="what?" />
-                    <button class="btn btn-lg btn-primary btn-block" id="btn">&gt;</button>
+        <div class="container" style="margin-top: 10px; width: 500px;">
+            <div class="card-deck">
+                <div class="card" id="understand-card" style="padding: 10px;" >
+                    <div class="description card-body">
+                        <ul>
+                            <li>Цель: набрать 10 из 15 в одной из категории.</li>
+                            <li>1 попытка на категорию.</li>
+                            <li>Время на каждый вопрос ограничено.</li>
+                        </ul>
+                    </div>
+                    <button type="button" id="understand-btn" class="btn btn-lg btn-block btn-primary">Понятно!</button>
+                </div>
+                <div class="card" id="categories-card" style="padding: 10px;display: none">
+                    <div class="description card-body">
+                        <button type="button" id="rock-btn" class="btn btn-lg btn-block btn-primary">ROCK! (0/15)</button>
+                        <button type="button" id="cinema-btn" class="btn btn-lg btn-block btn-primary">Cinema! (0/15)</button>
+                    </div>
+                </div>
+                <div class="card" id="answers-card" style="padding: 10px;display: none">
+                    <div class="description card-body">
+                        <h2 style="text-align: center">Answer:</h2>
+                        <h3 style="text-align: center" id="answer"></h3>
+                    </div>
+                </div>
+                <!--Rock-->
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                    <div class="answer">Led Zeppelin</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">200.0</h3>
+                            <div>
+                                <img src="Rock/1.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                    <div class="answer">Doors</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Rock/2.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                    <div class="answer">Who</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Rock/3.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                    <div class="answer">Pantera</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Rock/4.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Green Day</div>
+                        <div class="answer-pattern">green\s?day</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/5.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Smashing Pumpkins</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/6.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Guns N Roses</div>
+                        <div class="answer-pattern">guns\s?n\s?\'?\sroses</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/7.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Queen</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/8.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Red Hot Chili Peppers</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/9.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Pearl Jam</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/10.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Sex Pistols</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/11.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Rolling Stones</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/12.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Radiohead</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/13.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Stone Temple Pilots</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/14.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="card question-card-rock" style="padding: 10px;display: none">
+                        <div class="answer">Blind Melon</div>
+                        <div class="description card-body">
+                            <div class="question-body">
+                                <h3 class="timer" style="text-align: center">120.0</h3>
+                                <div>
+                                    <img src="Rock/15.png" style="margin: auto;display: block;" />
+                                </div>
+                                <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                                <button  style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                            </div>
+                        </div>
+                </div>
+                <!--Cinema-->
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Taxi Driver</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/1.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" placeholder="Название фильма на английском" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Kill Bill</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/2.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Point Break</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/3.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Waterworld</div>
+                    <div class="answer-pattern">water\s?world</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/4.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Jaws</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/5.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Inception</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/6.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Pulp Fiction</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/7.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Men in Black</div>
+                    <div class="answer-pattern">Men\sin\sBlack|mib</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/8.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Matrix</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/9.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">No Country for Old Men</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/10.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Indiana Jones</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/11.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Wall-e</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/12.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Life of PI</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/13.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Leon</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/14.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card question-card-cinema" style="padding: 10px;display: none">
+                    <div class="answer">Seven</div>
+                    <div class="description card-body">
+                        <div class="question-body">
+                            <h3 class="timer" style="text-align: center">120.0</h3>
+                            <div>
+                                <img src="Cinema/15.png" style="margin: auto;display: block;" />
+                            </div>
+                            <input style="margin-top: 10px;" class="form-control user-answer" type="text" />
+                            <button style="margin-top: 10px;" class="btn btn-lg btn-block btn-primary btn-next">Next</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <script>
-            var btn = document.getElementById('btn');
-            btn.onclick = function() {
-                var answer = document.getElementById('answer');
-                if (answer.value.toLowerCase().includes('loaded') && answer.value.toLowerCase().toLowerCase().includes('gun'))
-                    document.body.innerHTML = '49.989639, 36.248715'
-            };
-        </script>
     </body>
 </html>
