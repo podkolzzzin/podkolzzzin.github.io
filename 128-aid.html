@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реквізити військової частини А1556</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+      background-image: url('128.svg');
+      background-repeat: no-repeat;
+      /* Set background position to top right */
+      background-position: top right;
+      /* Ensure the background is fixed so it doesn't scroll */
+      background-attachment: fixed;
+      background-color: rgb(230, 230, 230);
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Реквізити військової частини <strong>А1556</strong></h1>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Для отримання благодійної допомоги</h5>
+      <div class="form-group">
+        <label for="recepient">Отримувач:</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="recepient" value="Військова частина А1556" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('recepient')"><i class="far fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mfo">МФО:</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="mfo" title="Державна казначейська служба України м. Київ" value="820172" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('mfo')"><i class="far fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="swiftCode">Код ЄДРПОУ:</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="swiftCode" value="07792042" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('swiftCode')"><i class="far fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="IBAN">Реэстраційний рахунок (IBAN):</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="IBAN" value="UA648201720313221003302006394" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('IBAN')"><i class="far fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="meta">Призначення платежу:</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="meta" value="Отримання благодійної допомоги" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('meta')"><i class="far fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and Font Awesome JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+<script>
+  function copyToClipboard(elementId) {
+    var copyText = document.getElementById(elementId);
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+  }
+</script>
+
+</body>
+</html>
